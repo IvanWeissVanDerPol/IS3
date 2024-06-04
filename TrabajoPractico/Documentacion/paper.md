@@ -1,11 +1,11 @@
 # UNIVERSIDAD NACIONAL DE ASUNCIÓN
 ## FACULTAD POLITÉCNICA – SEDE SAN LORENZO
-### DISCIPLINA: INGENIERÍA DE SOFTWARE II
-**PROFESOR**: LUIS GILBERTO SALINAS CAÑETE  
+### DISCIPLINA: INGENIERÍA DE SOFTWARE III
+**PROFESOR**:   
 **TEMA**: INFORME FINAL  
-**GRUPO**: NÚMERO 9  
+**GRUPO**: NÚMERO xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  
 **INTEGRANTES**:  
-- [NOMBRE INTEGRANTE 1]  
+- Ivan Weiss Van Der Pol
 - [NOMBRE INTEGRANTE 2]  
 - [NOMBRE INTEGRANTE 3]  
 - [NOMBRE INTEGRANTE 4]  
@@ -179,18 +179,63 @@ El código obtuvo una calificación de [Calificación] según [Herramienta].
 ---
 
 # Casos de Pruebas
-Se seleccionaron las funciones más importantes del sistema para realizar pruebas a estas partes del software y mostrar sus debilidades más resaltantes. Estos serían: la creación de un proyecto, la creación de roles y la creación de tipos de historia de usuario.
+Para seleccionar las funciones más importantes del sistema y realizar pruebas exhaustivas, es necesario identificar aquellas funcionalidades que son críticas para el funcionamiento y la usabilidad del sistema. A continuación, se enumeran algunas de las funciones más importantes basadas en los requerimientos funcionales y el contexto general del sistema:
 
-El formato para los casos de prueba es el siguiente:
-- **Datos esperados**: Realizar la prueba con los datos correctos, que son cargados en un formulario de la interfaz gráfica.
-- **Datos no esperados**: Realizar la prueba con los datos incorrectos, que son cargados en un formulario de la interfaz gráfica.
-- **Sin Datos**: Realizar la prueba sin cargar los datos en el formulario de la interfaz gráfica.
-- **Datos**: Los datos que se cargarán en cada prueba.
-- **Respuesta**: Los resultados devueltos por el software luego de realizar cada prueba.
-- **Problemas**: La descripción de las causas por las cuales el software no funciona correctamente, luego de realizar cada prueba.
-- **Sugerencias**: Sugerencias sobre posibles mejoras en el software, correspondientes a cada prueba.
+## Funcionalidades mas importantes
+1. **Inicio de Sesión y Autenticación**
+   - **RF-02**: El sistema permitirá el inicio de sesión mediante una aplicación dedicada a este propósito con la provisión de un username y password.
+   - **RF-03**: La aplicación de inicio de sesión del sistema verificará que las credenciales proporcionadas por el usuario son correctas y válidas.
 
-La elaboración y resultados de ejecución de cada caso de prueba se detallan en el archivo adjunto.
+2. **Gestión de Usuarios**
+   - **RF-06**: El sistema permitirá la visualización del perfil de usuario.
+   - **RF-19**: El sistema permitirá asignar roles a los usuarios.
+
+3. **Publicación de Contenidos**
+   - **RF-24**: El sistema deberá permitir crear contenido dentro de una categoría.
+   - **RF-27**: El sistema permitirá al autor visualizar sus publicaciones dentro de la pestaña “Mi perfil”.
+   - **RF-28**: El sistema deberá permitir crear nuevos contenidos de texto.
+
+4. **Interacción con Publicaciones**
+   - **RF-33**: El sistema permitirá la posibilidad de dar likes a una publicación.
+   - **RF-34**: El sistema deberá permitir compartir publicaciones.
+   - **RF-31**: El sistema deberá permitir a los usuarios comentar publicaciones.
+
+5. **Gestión de Categorías**
+   - **RF-25**: El sistema deberá permitir crear nuevas categorías.
+   - **RF-36**: El administrador podrá crear categorías.
+
+6. **Flujo de Aprobación**
+   - **RF-41**: El sistema permitirá el cambio de estado de una publicación de “En revisión” a “Publicado”.
+   - **RF-42**: El sistema permitirá el cambio de estado de una publicación de “En revisión” a “Rechazado”.
+
+### Casos de Prueba Propuestos
+
+#### Inicio de Sesión y Autenticación
+- **Prueba de inicio de sesión con credenciales válidas** (RF-02, RF-03)
+- **Prueba de inicio de sesión con credenciales inválidas** (RF-02, RF-03)
+- **Prueba de recuperación de contraseña** (si aplica)
+
+#### Gestión de Usuarios
+- **Prueba de visualización del perfil de usuario** (RF-06)
+- **Prueba de asignación de roles a un usuario** (RF-19)
+
+#### Publicación de Contenidos
+- **Prueba de creación de contenido de texto** (RF-24, RF-28)
+- **Prueba de visualización de publicaciones en "Mi perfil"** (RF-27)
+
+#### Interacción con Publicaciones
+- **Prueba de dar like a una publicación** (RF-33)
+- **Prueba de comentar una publicación** (RF-31)
+- **Prueba de compartir una publicación** (RF-34)
+
+#### Gestión de Categorías
+- **Prueba de creación de una nueva categoría** (RF-25, RF-36)
+
+#### Flujo de Aprobación
+- **Prueba de cambio de estado de publicación a "Publicado"** (RF-41)
+- **Prueba de cambio de estado de publicación a "Rechazado"** (RF-42)
+
+Al enfocarse en estas áreas, se puede asegurar que las funciones críticas del sistema sean probadas a fondo para identificar cualquier defecto o área de mejora.
 
 ---
 
