@@ -16,13 +16,21 @@ SAN LORENZO, 2024
 ---
 
 # Introducción
-Las pruebas de software permiten controlar la calidad y funcionalidad de cualquier producto que se desarrolle; son la mejor garantía de que este no presenta fallos y se comporta adecuadamente.
+## Descripción del trabajo
+En este trabajo, nos enfocamos en realizar pruebas exhaustivas sobre un Sistema de Gestión de Contenidos (CMS). Este sistema está diseñado para gestionar publicaciones, usuarios y categorías, ofreciendo una plataforma robusta y eficiente para la creación y administración de contenido digital.
 
-El trabajo consiste en verificar el correcto funcionamiento y la buena implementación de un proyecto de software, además de buscar puntos débiles y puntos de mejora.
+## En qué consiste la actividad y en qué radica la importancia
+La actividad consiste en validar los requerimientos del CMS y buscar fallas en sus funcionalidades. Las pruebas de software tienen como objetivo principal encontrar y corregir errores antes de que el sistema sea entregado al usuario final. Esta validación es crucial para asegurar que el sistema funcione según lo esperado y cumpla con los estándares de calidad necesarios.
 
-Para ello es necesario inspeccionar y entender el código, analizar el modelo de datos, verificar que se cumplan con los requerimientos del sistema, evaluar la interfaz gráfica y, claramente, realizar pruebas.
+## Objetivos
+- Realizar pruebas sobre el sistema CMS para validar sus requerimientos.
+- Identificar y documentar fallas en las funcionalidades del sistema.
+- Asegurar que el sistema cumple con los requerimientos funcionales y no funcionales definidos.
+- Evaluar la calidad de la interfaz gráfica y la experiencia del usuario.
+- Ejecutar pruebas de estrés para determinar el rendimiento del sistema bajo condiciones de carga elevada.
 
-El proyecto de software a examinar es el **[NOMBRE DEL PROYECTO]**, elaborado por [NOMBRE DESARROLLADOR 1], [NOMBRE DESARROLLADOR 2] y [NOMBRE DESARROLLADOR 3]. Este proyecto permite implementar la metodología ágil Scrum, junto con tableros Kanban, para el desarrollo de proyectos, donde se cuentan con equipos de desarrollos, con roles específicos.
+## Importancia de las pruebas en el desarrollo de software
+Las pruebas de software son fundamentales en el ciclo de vida del desarrollo de software. Probar el sistema permite detectar errores y problemas que podrían afectar negativamente la experiencia del usuario final. A través de pruebas rigurosas, se mejora la calidad, seguridad y rendimiento del sistema, asegurando que el producto final sea confiable y eficiente.
 
 ---
 
@@ -49,12 +57,12 @@ Se emplearon herramientas específicas para este propósito. **[Herramienta 1]**
 ### Inspección del modelo de datos
 Se realizó de forma manual, sin utilizar herramientas de software.
 
-## Pruebas de Caja Negra
+## Pruebas ad hoc
 ### Evaluación de Casos de Prueba
-Consistió en pruebas de datos esperados, datos nulos y datos no esperados o fuera de rango. Se registró la respuesta del sistema en cada caso y se sugieren algunas mejoras y/o correcciones.
+Consistió en la prueba de las funcionalidades descritas en la documentacion. tanto happy path como casos mas complejos, invalidos y vacios. Se registró la respuesta del sistema en cada caso y se sugieren algunas mejoras y/o correcciones.
 
 ### Evaluación de Requerimientos
-Se evaluó cada requerimiento funcional, determinando su cumplimiento. No se encontraron requerimientos no funcionales.
+Se evaluó cada requerimiento funcional, determinando su cumplimiento.
 
 ### Evaluación de la Interfaz Gráfica
 Se consideraron aspectos como la confortabilidad de la vista, la correctitud de los formularios, y la facilidad de uso.
@@ -63,16 +71,26 @@ Se consideraron aspectos como la confortabilidad de la vista, la correctitud de 
 Se realizaron pruebas de rendimiento al sistema con la herramienta **[Herramienta de Pruebas de Rendimiento]**.
 
 ### Planificación de Actividades
-Se anexo la distribución de trabajo, duración, fecha de inicio y fin de las actividades y recursos asignados; además del gráfico de Gantt para las actividades planificadas.
+Se anexo la distribución de trabajo, duración, fecha de inicio y fin de las actividades y recursos asignados;
 
 ---
-
 # Comparación entre las características de facilidad de prueba con las características exhibidas por el sistema
-- **Operabilidad**: El sistema presenta errores al intentar realizar acciones fuera de lo esperado, a pesar de esto, en líneas generales el sistema opera de una manera esperada.
-- **Observabilidad**: El sistema presenta mensajes informativos a la hora de realizar la mayoría de las acciones, en ciertos casos faltan mensajes o contienen información incorrecta.
-- **Controlabilidad**: Los controles de validez de los datos son realizados antes de aplicar permanentemente los cambios.
-- **Capacidad de Descomposición**: El sistema se encuentra subdividido en tres módulos: Seguridad, Proyecto y Desarrollo.
-- **Simplicidad**: El sistema presenta una interfaz gráfica amigable, aunque algunas opciones son difíciles de encontrar.
+
+- **Operabilidad**: 
+  El sistema muestra un comportamiento generalmente esperado cuando se realizan acciones estándar. Sin embargo, se presentan errores al intentar realizar acciones fuera del rango esperado. Por ejemplo, la barra de búsqueda no encuentra usuarios o categorías, pero sí encuentra contenidos correctamente. Esto indica que la funcionalidad de búsqueda necesita mejorar para ser más robusta y completa.
+
+- **Observabilidad**:
+  El sistema ofrece mensajes informativos cuando se realizan la mayoría de las acciones. Sin embargo, hay ocasiones en las que los mensajes son insuficientes o contienen información incorrecta. Un ejemplo de esto es al ingresar credenciales incorrectas durante el inicio de sesión, donde el mensaje de error es poco descriptivo y no especifica el problema exacto.
+
+- **Controlabilidad**:
+
+
+- **Capacidad de Descomposición**:
+  El sistema está bien descompuesto en módulos claros y manejables, como Seguridad, Proyecto y Desarrollo. Cada módulo tiene su propia responsabilidad, lo que facilita la prueba y el mantenimiento del sistema. La estructura modular está bien definida con archivos dedicados a configuraciones, usuarios, publicaciones, y scripts específicos para cada funcionalidad, como activación de publicaciones, búsqueda, calificaciones, y visualización de códigos QR.
+
+- **Simplicidad**:
+  La interfaz gráfica del sistema es amigable y relativamente simple de usar. Se utiliza un diseño limpio con colores adecuados y tipos de fuentes que facilitan la lectura. No obstante, algunas opciones son difíciles de encontrar, y la navegación puede resultar confusa para los usuarios. La falta de un apartado de ayuda disponible también limita la simplicidad de uso, especialmente para nuevos usuarios que podrían necesitar orientación.
+
 
 ---
 
@@ -123,74 +141,156 @@ El código obtuvo una calificación de [Calificación] según [Herramienta].
 ---
 
 # Análisis del Modelo de Datos
+
 ## Checklist del Modelo de la Base de Datos
+
 ### Restricciones de Integridad
+
 | Tipo | Observaciones |
 |------|---------------|
-| De Entidad | |
-| Toda fila debe tener una clave principal | [Estado] |
-| Los valores de la clave deben ser únicos | [Estado] |
-| Los valores no deben ser nulos | [Estado] |
-| Los valores no pueden estar duplicados | [Estado] |
-| De Dominio | |
-| Comprobación de validez | [Estado] |
-| Restricción del tipo de dato | [Estado] |
-| Comprobación del formato | [Estado] |
-| Comprobación de los valores posibles en una columna | [Estado] |
-| De Referencia | |
-| Evita la eliminación de filas de una tabla a la que se hace referencia | [Estado] |
-| Evita la modificación de la clave principal si una clave externa hace referencia a la fila | [Estado] |
-| Actualización sobre la tabla hija del valor de la clave externa, y verificar correspondencia con el valor de la clave principal en la tabla padre | [Estado] |
+| **De Entidad** | |
+| Toda fila debe tener una clave principal | Cumplido |
+| Los valores de la clave deben ser únicos | Cumplido |
+| Los valores no deben ser nulos | Cumplido |
+| Los valores no pueden estar duplicados | Cumplido |
+| **De Dominio** | |
+| Comprobación de validez | Cumplido |
+| Restricción del tipo de dato | Cumplido |
+| Comprobación del formato | Cumplido |
+| Comprobación de los valores posibles en una columna | Cumplido |
+| **De Referencia** | |
+| Evita la eliminación de filas de una tabla a la que se hace referencia | Cumplido |
+| Evita la modificación de la clave principal si una clave externa hace referencia a la fila | Cumplido |
+| Actualización sobre la tabla hija del valor de la clave externa, y verificar correspondencia con el valor de la clave principal en la tabla padre | Cumplido |
+
+
+ **De Entidad**:
+   - Todas las tablas tienen una clave primaria definida.
+   - Las claves primarias garantizan que los valores sean únicos y no nulos.
+   - No se permiten valores duplicados en las claves primarias.
+ **De Dominio**:
+   - Los tipos de datos están definidos para cada columna, lo que garantiza la validez, formato y restricción de tipo de datos.
+
+ **De Referencia**:
+   - Las claves foráneas están definidas con restricciones para evitar la eliminación y modificación de filas referenciadas.
+   - Las actualizaciones sobre las tablas hijas mantienen la correspondencia con las claves principales en las tablas padres.
+
 
 ### Triggers
+
 | Items | Observaciones |
 |-------|---------------|
-| Triggers de inserción definidos | [Estado] |
-| Triggers de modificación definidos | [Estado] |
-| Triggers de eliminación definidos | [Estado] |
-| Triggers de violación de restricción de integridad definidos | [Estado] |
-| Triggers de intervalo de tiempo definidos | [Estado] |
-| Son suficientes para controlar las operaciones ABM | [Estado] |
-| Se utiliza para evitar inconsistencia en caso de redundancia controlada | [Estado] |
+| Triggers de inserción definidos | No Definidos |
+| Triggers de modificación definidos | No Definidos |
+| Triggers de eliminación definidos | No Definidos |
+| Triggers de violación de restricción de integridad definidos | No Definidos |
+| Triggers de intervalo de tiempo definidos | No Definidos |
+| Son suficientes para controlar las operaciones ABM | No Definidos |
+| Se utiliza para evitar inconsistencia en caso de redundancia controlada | No Definidos |
+
+ **Triggers**:
+   - No se han definido triggers en las tablas, lo cual puede ser una oportunidad para mejorar el control de operaciones ABM y evitar inconsistencias.
 
 ### Redundancias
+
 | Items | Observaciones |
 |-------|---------------|
-| Redundancias creadas | [Estado] |
-| Constraints definidos para evitar inconsistencias al crear | [Estado] |
-| Medidas para evitar inconsistencias en actualizaciones | [Estado] |
+| Redundancias creadas | Cumplido |
+| Constraints definidos para evitar inconsistencias al crear | Cumplido |
+| Medidas paraevitar inconsistencias en actualizaciones | Cumplido |
+ 
+ **Redundancias**:
+   - Se han definido constraints para evitar inconsistencias en la creación y actualización de datos, y se han identificado redundancias controladas en algunas tablas.
+
+
 
 ### Código SQL
+
 | Items | Observaciones |
 |-------|---------------|
-| Consultas SQL definidas | [Estado] |
-| Codificación estándar de consultas | [Estado] |
-| Reutilización del código SQL | [Estado] |
+| Consultas SQL definidas | No Definido |
+| Codificación estándar de consultas | No Definido |
+| Reutilización del código SQL | No Definido |
+
+ **Código SQL**:
+   - No se definieron consultas SQL estándar ni reutilización de código SQL en el modelo de datos proporcionado. Esto puede ser una mejora futura para estandarizar y reutilizar consultas.
 
 ### Normalización
+
 | Items | Observaciones |
 |-------|---------------|
-| Primera Forma Normal | [Estado] |
-| Segunda Forma Normal | [Estado] |
-| Tercera Forma Normal | [Estado] |
-| Forma Normal Boyce-Cood | [Estado] |
-| Cuarta Forma Normal | [Estado] |
+| Primera Forma Normal | Cumplido |
+| Segunda Forma Normal | Cumplido |
+| Tercera Forma Normal | Cumplido |
+| Forma Normal Boyce-Cood | Cumplido |
+| Cuarta Forma Normal | No Aplicable |
+
+ **Normalización**:
+   - Las tablas cumplen con las primeras tres formas normales (1NF, 2NF y 3NF) y la forma normal de Boyce-Codd (BCNF), asegurando la eliminación de redundancias y dependencias anómalas.
+   - La cuarta forma normal (4NF) no es aplicable en este contexto debido a la ausencia de multivalores.
+
+Este análisis muestra que el modelo de datos está bien estructurado en términos de integridad y normalización, pero carece de triggers y consultas SQL estándar que podrían mejorar el control y la eficiencia del sistema.
 
 ---
 
 # Casos de Pruebas
-Se seleccionaron las funciones más importantes del sistema para realizar pruebas a estas partes del software y mostrar sus debilidades más resaltantes. Estos serían: la creación de un proyecto, la creación de roles y la creación de tipos de historia de usuario.
+Para seleccionar las funciones más importantes del sistema y realizar pruebas exhaustivas, es necesario identificar aquellas funcionalidades que son críticas para el funcionamiento y la usabilidad del sistema. A continuación, se enumeran algunas de las funciones más importantes basadas en los requerimientos funcionales y el contexto general del sistema:
 
-El formato para los casos de prueba es el siguiente:
-- **Datos esperados**: Realizar la prueba con los datos correctos, que son cargados en un formulario de la interfaz gráfica.
-- **Datos no esperados**: Realizar la prueba con los datos incorrectos, que son cargados en un formulario de la interfaz gráfica.
-- **Sin Datos**: Realizar la prueba sin cargar los datos en el formulario de la interfaz gráfica.
-- **Datos**: Los datos que se cargarán en cada prueba.
-- **Respuesta**: Los resultados devueltos por el software luego de realizar cada prueba.
-- **Problemas**: La descripción de las causas por las cuales el software no funciona correctamente, luego de realizar cada prueba.
-- **Sugerencias**: Sugerencias sobre posibles mejoras en el software, correspondientes a cada prueba.
+1. **Inicio de Sesión y Autenticación**
+   - **RF-02**: El sistema permitirá el inicio de sesión mediante una aplicación dedicada a este propósito con la provisión de un username y password.
+   - **RF-03**: La aplicación de inicio de sesión del sistema verificará que las credenciales proporcionadas por el usuario son correctas y válidas.
 
-La elaboración y resultados de ejecución de cada caso de prueba se detallan en el archivo adjunto.
+2. **Gestión de Usuarios**
+   - **RF-06**: El sistema permitirá la visualización del perfil de usuario.
+   - **RF-19**: El sistema permitirá asignar roles a los usuarios.
+
+3. **Publicación de Contenidos**
+   - **RF-24**: El sistema deberá permitir crear contenido dentro de una categoría.
+   - **RF-27**: El sistema permitirá al autor visualizar sus publicaciones dentro de la pestaña “Mi perfil”.
+   - **RF-28**: El sistema deberá permitir crear nuevos contenidos de texto.
+
+4. **Interacción con Publicaciones**
+   - **RF-33**: El sistema permitirá la posibilidad de dar likes a una publicación.
+   - **RF-34**: El sistema deberá permitir compartir publicaciones.
+   - **RF-31**: El sistema deberá permitir a los usuarios comentar publicaciones.
+
+5. **Gestión de Categorías**
+   - **RF-25**: El sistema deberá permitir crear nuevas categorías.
+   - **RF-36**: El administrador podrá crear categorías.
+
+6. **Flujo de Aprobación**
+   - **RF-41**: El sistema permitirá el cambio de estado de una publicación de “En revisión” a “Publicado”.
+   - **RF-42**: El sistema permitirá el cambio de estado de una publicación de “En revisión” a “Rechazado”.
+
+### Casos de Prueba 
+
+#### Inicio de Sesión y Autenticación
+- **Prueba de inicio de sesión con credenciales válidas** (RF-02, RF-03)
+- **Prueba de inicio de sesión con credenciales inválidas** (RF-02, RF-03)
+- **Prueba de recuperación de contraseña** (si aplica)
+
+#### Gestión de Usuarios
+- **Prueba de visualización del perfil de usuario** (RF-06)
+- **Prueba de asignación de roles a un usuario** (RF-19)
+
+#### Publicación de Contenidos
+- **Prueba de creación de contenido de texto** (RF-24, RF-28)
+- **Prueba de visualización de publicaciones en "Mi perfil"** (RF-27)
+
+#### Interacción con Publicaciones
+- **Prueba de dar like a una publicación** (RF-33)
+- **Prueba de comentar una publicación** (RF-31)
+- **Prueba de compartir una publicación** (RF-34)
+
+#### Gestión de Categorías
+- **Prueba de creación de una nueva categoría** (RF-25, RF-36)
+
+#### Flujo de Aprobación
+- **Prueba de cambio de estado de publicación a "Publicado"** (RF-41)
+- **Prueba de cambio de estado de publicación a "Rechazado"** (RF-42)
+
+Al enfocarse en estas áreas, se puede asegurar que las funciones críticas del sistema sean probadas a fondo para identificar cualquier defecto o área de mejora.
+
 
 ---
 
