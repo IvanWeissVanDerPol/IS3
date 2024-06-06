@@ -38,16 +38,14 @@ Para seleccionar las funciones más importantes del sistema y realizar pruebas e
 - **Objetivo**: Verificar que el sistema permite el inicio de sesión con credenciales válidas.
 - **Precondiciones**: El usuario debe tener una cuenta registrada en el sistema.
 - **Datos de Prueba**:
-  - Usuario: usuario_valido
+  - Usuario: usuario0
   - Contraseña: contraseña_valida
 - **Pasos**:
   1. Navegar a la página de inicio de sesión.
   2. Ingresar el nombre de usuario y la contraseña válidos.
   3. Hacer clic en el botón "Iniciar sesión".
 - **Resultado Esperado**: El usuario es redirigido a la página principal del sistema y puede acceder a las funcionalidades del sistema.
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
+- **Resultado Obtenido**: El usuario es redirigido a la página principal del sistema y puede acceder a las funcionalidades del sistema.
 
 ### Prueba de inicio de sesión con credenciales inválidas (RF-02, RF-03)
 - **Objetivo**: Verificar que el sistema no permite el inicio de sesión con credenciales inválidas.
@@ -60,24 +58,10 @@ Para seleccionar las funciones más importantes del sistema y realizar pruebas e
   2. Ingresar el nombre de usuario y la contraseña inválidos.
   3. Hacer clic en el botón "Iniciar sesión".
 - **Resultado Esperado**: El sistema muestra un mensaje de error indicando que las credenciales son incorrectas.
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
+- **Resultado Obtenido**: El sistema muestra un mensaje de error que indica "corrige los errores a continuacion"  sin indicar cual es el error
+- **Problemas Encontrados**: no se hace saber al usuario del error de usuario / clave invalidos 
+- **Sugerencias**: mensajes de error mas completos
 
-### Prueba de recuperación de contraseña (si aplica)
-- **Objetivo**: Verificar que el sistema permite la recuperación de la contraseña.
-- **Precondiciones**: El usuario debe tener una cuenta registrada en el sistema.
-- **Datos de Prueba**:
-  - Email: email_registrado
-- **Pasos**:
-  1. Navegar a la página de inicio de sesión.
-  2. Hacer clic en el enlace "Olvidé mi contraseña".
-  3. Ingresar el email registrado.
-  4. Hacer clic en el botón "Recuperar contraseña".
-- **Resultado Esperado**: El sistema envía un email con instrucciones para recuperar la contraseña.
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
 
 ## Gestión de Usuarios
 
@@ -88,9 +72,8 @@ Para seleccionar las funciones más importantes del sistema y realizar pruebas e
   1. Navegar a la página principal del sistema.
   2. Hacer clic en el enlace "Perfil".
 - **Resultado Esperado**: El sistema muestra los datos del perfil del usuario.
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
+- **Resultado Obtenido**: El sistema muestra correctamente los datos del perfil del usuario, incluyendo el nombre de usuario, correo electrónico y roles asignados.
+
 
 ### Prueba de asignación de roles a un usuario (RF-19)
 - **Objetivo**: Verificar que el sistema permite asignar roles a los usuarios.
@@ -103,10 +86,8 @@ Para seleccionar las funciones más importantes del sistema y realizar pruebas e
   2. Seleccionar el usuario al que se le asignará un rol.
   3. Asignar el rol correspondiente.
   4. Guardar los cambios.
-- **Resultado Esperado**: El sistema asigna correctamente el rol al usuario seleccionado.
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
+  - **Resultado Esperado**: El sistema asigna correctamente el rol al usuario seleccionado.
+  - **Resultado Obtenido**: El sistema asigna correctamente los roles al usuario y muestra un mensaje de confirmación.
 
 ## Publicación de Contenidos
 
@@ -123,9 +104,9 @@ Para seleccionar las funciones más importantes del sistema y realizar pruebas e
   3. Seleccionar la categoría correspondiente.
   4. Hacer clic en el botón "Guardar".
 - **Resultado Esperado**: El sistema guarda y muestra el nuevo contenido en la categoría seleccionada.
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
+- **Resultado Obtenido**: El sistema muestra un mensaje de error si se seleccionan más de una categoría o si no se selecciona ninguna categoría. Cuando se selecciona correctamente una sola categoría, el sistema guarda y muestra el nuevo contenido.
+- **Problemas Encontrados**: El sistema no permite seleccionar más de una categoría, ni permite la creación de contenido sin seleccionar una categoría, mostrando mensajes de error adecuados.
+- **Sugerencias**: Asegurarse de que las restricciones de selección de categorías están claramente documentadas y comunicadas al usuario.
 
 ### Prueba de visualización de publicaciones en "Mi perfil" (RF-27)
 - **Objetivo**: Verificar que el sistema permite visualizar las publicaciones del autor dentro de la pestaña “Mi perfil”.
@@ -134,12 +115,12 @@ Para seleccionar las funciones más importantes del sistema y realizar pruebas e
   1. Navegar a la página principal del sistema.
   2. Hacer clic en el enlace "Mi perfil".
 - **Resultado Esperado**: El sistema muestra todas las publicaciones creadas por el usuario.
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
+- **Resultado Obtenido**: El sistema muestra correctamente todas las publicaciones creadas por el usuario en la pestaña "Mi perfil".
+
+
+
 
 ## Interacción con Publicaciones
-
 ### Prueba de dar like a una publicación (RF-33)
 - **Objetivo**: Verificar que el sistema permite dar like a una publicación.
 - **Precondiciones**: El usuario debe estar autenticado en el sistema.
@@ -147,9 +128,7 @@ Para seleccionar las funciones más importantes del sistema y realizar pruebas e
   1. Navegar a una publicación.
   2. Hacer clic en el botón "Like".
 - **Resultado Esperado**: El contador de likes de la publicación aumenta en uno.
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
+- **Resultado Obtenido**: El contador de likes aumentó en uno, de 0 a 1.
 
 ### Prueba de comentar una publicación (RF-31)
 - **Objetivo**: Verificar que el sistema permite a los usuarios comentar publicaciones.
@@ -161,9 +140,7 @@ Para seleccionar las funciones más importantes del sistema y realizar pruebas e
   2. Ingresar un comentario en el campo correspondiente.
   3. Hacer clic en el botón "Comentar".
 - **Resultado Esperado**: El sistema guarda y muestra el comentario en la publicación.
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
+- **Resultado Obtenido**: El sistema guardó y mostró el comentario "test comment".
 
 ### Prueba de compartir una publicación (RF-34)
 - **Objetivo**: Verificar que el sistema permite compartir publicaciones.
@@ -172,9 +149,8 @@ Para seleccionar las funciones más importantes del sistema y realizar pruebas e
   1. Navegar a una publicación.
   2. Hacer clic en el botón "Compartir".
 - **Resultado Esperado**: El sistema muestra un código QR o un enlace para compartir la publicación.
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
+- **Resultado Obtenido**: El sistema mostró un código QR para compartir la publicación.
+
 
 ## Gestión de Categorías
 
@@ -189,9 +165,7 @@ Para seleccionar las funciones más importantes del sistema y realizar pruebas e
   2. Ingresar los datos de la nueva categoría.
   3. Hacer clic en el botón "Guardar".
 - **Resultado Esperado**: El sistema guarda y muestra la nueva categoría en la lista de categorías.
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
+- **Resultado Obtenido**: La nueva categoría fue creada y mostrada correctamente en la lista de categorías.
 
 ## Flujo de Aprobación
 
@@ -203,9 +177,7 @@ Para seleccionar las funciones más importantes del sistema y realizar pruebas e
   2. Cambiar el estado de la publicación a "Publicado".
   3. Guardar los cambios.
 - **Resultado Esperado**: El sistema actualiza el estado de la publicación a "Publicado".
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
+- **Resultado Obtenido**: La publicación cambió de estado a "Publicado" correctamente.
 
 ### Prueba de cambio de estado de publicación a "Rechazado" (RF-42)
 - **Objetivo**: Verificar que el sistema permite cambiar el estado de una publicación a "Rechazado".
@@ -215,6 +187,4 @@ Para seleccionar las funciones más importantes del sistema y realizar pruebas e
   2. Cambiar el estado de la publicación a "Rechazado".
   3. Guardar los cambios.
 - **Resultado Esperado**: El sistema actualiza el estado de la publicación a "Rechazado".
-- **Resultado Obtenido**: [Completar]
-- **Problemas Encontrados**: [Completar]
-- **Sugerencias**: [Completar]
+- **Resultado Obtenido**: La publicación cambió de estado a "Rechazado" correctamente.
