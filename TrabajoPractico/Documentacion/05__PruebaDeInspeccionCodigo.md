@@ -226,5 +226,16 @@ Blank: 681
     - (C + M % L): 21%
 
 ## Pylint
+Errores: 70
+
+Convenciones de código: 466
+
+Advertencia: 40
+
+Refactorización: 46
+
+![image](https://github.com/CamiMaidana/IS3/assets/76019683/03628a7d-9f0c-4eb7-8534-653d0b4289d2)
+
+
 ![image](https://github.com/IvanWeissVanDerPol/IS3/assets/76019683/5f514f2c-0eeb-4dfa-ba35-84c24fe0b37b)
 
