@@ -1,61 +1,46 @@
 # Pruebas de Estrés
 
-## 1. Introducción
-### 1.1 Propósito
-Describir el objetivo del documento y la importancia de realizar pruebas de estrés en el sistema. Las pruebas de estrés son cruciales para asegurar que el sistema pueda manejar cargas extremas y condiciones de estrés sin fallar.
-
-### 1.2 Alcance
-Este documento cubre la metodología, herramientas utilizadas, casos de prueba, y los resultados obtenidos durante las pruebas de estrés del Sistema de Administración de Contenido Web (CMS).
-
-### 1.3 Definiciones y Acrónimos
-- **CMS**: Sistema de Administración de Contenido.
-- **Prueba de Estrés**: Prueba que se realiza para evaluar el comportamiento del sistema bajo condiciones de carga extrema.
-
-## 2. Metodología de Pruebas de Estrés
-### 2.1 Objetivos de las Pruebas de Estrés
-- Evaluar el rendimiento del sistema bajo cargas extremas.
-- Identificar los puntos de fallo potenciales.
-- Verificar la capacidad del sistema para manejar picos de carga.
-
 ### 2.2 Herramientas Utilizadas
 - **JMeter**: Utilizado para realizar las peticiones en paralelo a la página inicial de login del sistema.
 
 ### 2.3 Proceso de Pruebas
-Describir el proceso seguido para realizar las pruebas de estrés, incluyendo la preparación del entorno, la ejecución de las pruebas y la recopilación de datos.
+Se realizo peticiones en paralelo de la pagina principal del software.
 
 ## 3. Casos de Prueba de Estrés
 ### 3.1 Descripción de Casos de Prueba
-Describir los diferentes casos de prueba utilizados para evaluar el rendimiento del sistema bajo condiciones de carga extrema.
 
-| Número de peticiones | Promedio | Min | Max | Std. Dev. | Error % | Rendimiento       | KB/seg recibido | KB/seg enviado | Bytes promedio |
-|----------------------|----------|-----|-----|-----------|----------|-------------------|-----------------|----------------|----------------|
-| [Número]             | [Prom.]  | [Min]| [Max]| [Std. Dev.]| [Err %]  | [Rend.]           | [KB/seg recv.]  | [KB/seg sent]  | [Bytes avg.]   |
-| [Número]             | [Prom.]  | [Min]| [Max]| [Std. Dev.]| [Err %]  | [Rend.]           | [KB/seg recv.]  | [KB/seg sent]  | [Bytes avg.]   |
-| [Número]             | [Prom.]  | [Min]| [Max]| [Std. Dev.]| [Err %]  | [Rend.]           | [KB/seg recv.]  | [KB/seg sent]  | [Bytes avg.]   |
-
-### 3.2 Datos de Prueba
-Describir los datos utilizados durante las pruebas, incluyendo la cantidad de datos y cómo se generaron.
+| Número de Peticiones | Número de Hilos (Threads) | Periodo de Incremento (Ramp-Up Period) | Número de Repeticiones (Loop Count) |
+|----------------------|---------------------------|----------------------------------------|--------------------------------------|
+| 500                  | 500                       | 10                                     | 1                                    |
+| 1000                 | 1000                      | 20                                     | 1                                    |
+| 2000                 | 2000                      | 40                                     | 1                                    |
+| 3000                 | 3000                      | 60                                     | 1                                    |
+| 4000                 | 4000                      | 80                                     | 1                                    |
+| 5000                 | 5000                      | 90                                    | 1                                    |
+| 6000                 | 6000                      | 100                                    | 1                                    |
 
 ## 4. Resultados de las Pruebas de Estrés
-### 4.1 Resumen de Resultados
-Presentar un resumen de los resultados obtenidos durante las pruebas de estrés.
 
-### 4.2 Análisis de Resultados
-Analizar los resultados, identificando cualquier problema o punto de fallo encontrado.
+| Número de peticiones | Promedio ms | Min ms | Max ms | Std. Dev. ms | Error %  | Rendimiento  sec | KB/seg recibido | KB/seg enviado | Bytes promedio |
+|----------------------|----------|-----|-----|-----------|----------|-------------------|-----------------|----------------|----------------|
+| 500             | 4762  | 59 | 9207| 2633.99 | 0 %   | 26.1/sec           | 930.57  | 2.95  | 36563   |
+| 1000             | 9323  | 50 | 18188| 5249.33 | 0 %   | 26.2/sec           | 935.30  | 2.97  | 36563   |
+| 2000             | 18428  | 49 | 35906| 10348.07 | 0 %   | 26.4/sec           | 941.01  | 2.99  | 36563   |
+| 3000             | 27689  | 52 | 53926| 15571.32 | 0 %   | 26.3/sec           | 940.42  | 2.98  | 36563   |
+| 4000             | 36918  | 52 | 60017| 19838.80 | 22.30 %   | 28.6/sec           | 794.84  | 3.24  | 28428.8   |
+| 5000             | 45617  | 56 | 92522| 22887.27 | 43.50 %   | 28.1/sec           | 570.86  | 3.18  | 20901.2   |
+| 6000             | 50200  | 54 | 92520| 21551.30 | 59.20 %   | 31.2/sec           | 460.30  | 3.53  | 15112.5   |
 
-### 4.3 Gráficos y Métricas
-Incluir gráficos y métricas relevantes que muestren el rendimiento del sistema bajo condiciones de carga.
 
-## 5. Conclusiones y Recomendaciones
 ### 5.1 Conclusiones
-Presentar las conclusiones generales basadas en los resultados de las pruebas de estrés.
+Se concluye que el servidor la cual se realizo la pruba cuenta con un buen rendimiento ya que a partir de 4000 peticiciones en paralelo empieza a responder con errores con un 22.3 % de las peticiones.
 
 ### 5.2 Recomendaciones
-Proporcionar recomendaciones para mejorar el rendimiento y la estabilidad del sistema bajo condiciones de carga extrema.
+Para el sistema se recomienda ejecutar en infraestructuras dedicadas y aisladas, ya que esto puede afectar el rendimiento de la misma.
 
 ### 7. Especificaciones del Entorno de Pruebas
 Las características de la máquina en que se realizaron las pruebas son las siguientes:
-- **Procesador**: [Descripción del procesador]
-- **RAM**: [Descripción de la memoria RAM]
-- **Almacenamiento**: [Descripción del almacenamiento]
+- **Procesador**: AMD Ryzen 7 5700X 3.4 Ghz 16 Core CPU 
+- **RAM**: 32GB 3200 Mhz DDR4
+- **Almacenamiento**: 3 TB SSD
 
