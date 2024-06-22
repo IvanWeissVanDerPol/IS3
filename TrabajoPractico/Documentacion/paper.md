@@ -143,38 +143,37 @@ La complejidad ciclomática es una métrica que ayuda a evaluar la complejidad d
 ### Listado de complejidad mayor o igual a 10:
 | Nombre                          | Tipo             | Complejidad Ciclomática |
 | ------------------------------- | ---------------- | ----------------------- |
-| [Nombre de la Función/Método 1] | [Función/Método] | [Valor]                 |
-| [Nombre de la Función/Método 2] | [Función/Método] | [Valor]                 |
-| [Nombre de la Función/Método 3] | [Función/Método] | [Valor]                 |
+| principal | Función | 10                |
+| obtener_publicaciones | Función | 10                 |
+| actualizar | Función | 10                 |
 
 ### Listado por rangos:
 | Rango      | Cantidad   |
 | ---------- | ---------- |
-| A (1-5)    | [Cantidad] |
-| B (6-10)   | [Cantidad] |
-| C (11-20)  | [Cantidad] |
-| D (21-50)  | [Cantidad] |
-| E (51-100) | [Cantidad] |
-| F (>100)   | [Cantidad] |
+| A (1-5)    | 117 |
+| B (6-10)   | 10 |
+| C (11-20)  | 0 |
+| D (21-50)  | 0 |
+| E (51-100) | 0 |
+| F (>100)   | 1 |
 
 ## Métricas de líneas de código y comentarios
 | Tipo                      | Cantidad   |
 | ------------------------- | ---------- |
-| Archivos analizados       | [Cantidad] |
-| Total de Líneas           | [Cantidad] |
-| Total de Líneas de código | [Cantidad] |
-| Total de Líneas en blanco | [Cantidad] |
-| Total de Comentarios      | [Cantidad] |
+| Total de Líneas           | 3713 |
+| Total de Líneas de código | 2268 |
+| Total de Líneas en blanco | 681 |
+| Total de Comentarios      | 184 |
 
 El código muestra una proporción significativa de comentarios, representando un porcentaje elevado del [Porcentaje]% del total de líneas.
 
 ## Mensajes de errores y advertencias
 | Tipo                   | Cantidad   |
 | ---------------------- | ---------- |
-| Errores                | [Cantidad] |
-| Convenciones de código | [Cantidad] |
-| Advertencias           | [Cantidad] |
-| Refactorizaciones      | [Cantidad] |
+| Errores                | 70 |
+| Convenciones de código | 466 |
+| Advertencias           | 40 |
+| Refactorizaciones      | 46 |
 
 El código obtuvo una calificación de [Calificación] según [Herramienta].
 
