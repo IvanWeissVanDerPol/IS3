@@ -1,14 +1,14 @@
 # UNIVERSIDAD NACIONAL DE ASUNCIÓN
 ## FACULTAD POLITÉCNICA – SEDE SAN LORENZO
 ### DISCIPLINA: INGENIERÍA DE SOFTWARE III
-**PROFESOR**:   
+**PROFESOR**: Luis Gilberto Salinas 
 **TEMA**: INFORME FINAL  
-**GRUPO**: NÚMERO xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  
+**GRUPO**: NÚMERO 7  
 **INTEGRANTES**:  
 - Ivan Weiss Van Der Pol
-- [NOMBRE INTEGRANTE 2]  
-- [NOMBRE INTEGRANTE 3]  
-- [NOMBRE INTEGRANTE 4]  
+- Camila Maidana  
+- jovana alvarez  
+- Fran sanabria   
 
 **TRABAJO PRÁCTICO**  
 SAN LORENZO, 2024  
@@ -51,27 +51,67 @@ Las pruebas de software son fundamentales en el ciclo de vida del desarrollo de 
 
 # Metodología de Pruebas
 ## Pruebas de Caja Blanca
-### Inspección de código [Lenguaje de Programación]
-Se emplearon herramientas específicas para este propósito. **[Herramienta 1]** fue utilizada para evaluar la complejidad ciclomática y métricas relacionadas con las líneas de código, mientras que **[Herramienta 2]** se encargó de verificar errores, convenciones de código, identificar advertencias y sugerir posibles mejoras en la estructura del código.
+### Inspección de código [Python]
+Se emplearon herramientas específicas para este propósito. **Understand for Java** y **GeroneSoft's Code Counter Pro Software** se utilizaron para evaluar la complejidad ciclomática y métricas relacionadas con las líneas de código. También se utilizó **Radon** para análisis detallado.
+
+## Resultados de la Inspección de Código
+| Archivo                            | Nombre                      | Tipo    | Complejidad Ciclomática |
+| ---------------------------------- | --------------------------- | ------- | ----------------------- |
+| proyecto_is2\cms\gcloud.py         | GoogleCloudMediaFileStorage | Clase   | A (2)                   |
+| proyecto_is2\cms\views.py          | principal                   | Función | B (10)                  |
+| proyecto_is2\cms\views.py          | obtener_publicaciones       | Función | B (10)                  |
+| proyecto_is2\comentarios\apps.py   | ComentariosConfig           | Clase   | A (1)                   |
+| proyecto_is2\comentarios\forms.py  | CommentForm                 | Clase   | A (2)                   |
+| proyecto_is2\comentarios\models.py | Comment                     | Clase   | A (2)                   |
+| proyecto_is2\comentarios\views.py  | comentar                    | Función | A (3)                   |
+
 
 ### Inspección del modelo de datos
-Se realizó de forma manual, sin utilizar herramientas de software.
+Se realizó de forma manual, sin utilizar herramientas de software. Se evaluaron las restricciones de integridad, triggers y redundancias para asegurar la consistencia de los datos.
 
-## Pruebas ad hoc
+# Pruebas ad hoc
 ### Evaluación de Casos de Prueba
-Consistió en la prueba de las funcionalidades descritas en la documentacion. tanto happy path como casos mas complejos, invalidos y vacios. Se registró la respuesta del sistema en cada caso y se sugieren algunas mejoras y/o correcciones.
+Consistió en la prueba de las funcionalidades descritas en la documentación, tanto happy path como casos más complejos, inválidos y vacíos. Se registró la respuesta del sistema en cada caso y se sugieren algunas mejoras y/o correcciones.
+
+#### Ejemplos de Casos de Prueba
+1. **Prueba de inicio de sesión con credenciales válidas (RF-02, RF-03)**
+   - **Objetivo**: Verificar que el sistema permite el inicio de sesión con credenciales válidas.
+   - **Precondiciones**: El usuario debe tener una cuenta registrada en el sistema.
+   - **Datos de Prueba**: Usuario: usuario0, Contraseña: contraseña_valida
+   - **Pasos**:
+     1. Navegar a la página de inicio de sesión.
+     2. Ingresar el nombre de usuario y la contraseña válidos.
+     3. Hacer clic en el botón "Iniciar sesión".
+   - **Resultado Esperado**: El usuario es redirigido a la página principal del sistema y puede acceder a las funcionalidades del sistema.
+   - **Resultado Obtenido**: El usuario es redirigido a la página principal del sistema y puede acceder a las funcionalidades del sistema.
+
 
 ### Evaluación de Requerimientos
-Se evaluó cada requerimiento funcional, determinando su cumplimiento.
+Se evaluó cada requerimiento funcional, determinando su cumplimiento. Se encontró que la mayoría de los requerimientos están implementados correctamente, aunque algunos mensajes de error necesitan ser más descriptivos  .
 
-### Evaluación de la Interfaz Gráfica
-Se consideraron aspectos como la confortabilidad de la vista, la correctitud de los formularios, y la facilidad de uso.
 
-### Pruebas de Rendimiento
-Se realizaron pruebas de rendimiento al sistema con la herramienta **[Herramienta de Pruebas de Rendimiento]**.
+# Evaluación de la Interfaz Gráfica
+Se consideraron aspectos como la confortabilidad de la vista, la correctitud de los formularios y la facilidad de uso. La interfaz gráfica es amigable y relativamente simple de usar, aunque algunas opciones son difíciles de encontrar y la navegación puede ser confusa para los usuarios .
+
+
+## Pruebas de Rendimiento
+Se realizaron pruebas de rendimiento al sistema con la herramienta **JMeter**. Se probaron múltiples cargas para evaluar el comportamiento del sistema bajo condiciones de estrés.
+
+### Resultados de las Pruebas de Estrés
+| Número de peticiones | Promedio ms | Min ms | Max ms | Std. Dev. ms | Error % | Rendimiento sec | KB/seg recibido | KB/seg enviado | Bytes promedio |
+| -------------------- | ----------- | ------ | ------ | ------------ | ------- | --------------- | --------------- | -------------- | -------------- |
+| 500                  | 4762        | 59     | 9207   | 2633.99      | 0 %     | 26.1/sec        | 930.57          | 2.95           | 36563          |
+| 1000                 | 9323        | 50     | 18188  | 5249.33      | 0 %     | 26.2/sec        | 935.30          | 2.97           | 36563          |
+| 2000                 | 18428       | 49     | 35906  | 10348.07     | 0 %     | 26.4/sec        | 941.01          | 2.99           | 36563          |
+| 3000                 | 27689       | 52     | 53926  | 15571.32     | 0 %     | 26.3/sec        | 940.42          | 2.98           | 36563          |
+| 4000                 | 36918       | 52     | 60017  | 19838.80     | 22.30 % | 28.6/sec        | 794.84          | 3.24           | 28428.8        |
+| 5000                 | 45617       | 56     | 92522  | 22887.27     | 43.50 % | 28.1/sec        | 570.86          | 3.18           | 20901.2        |
+| 6000                 | 50200       | 54     | 92520  | 21551.30     | 59.20 % | 31.2/sec        | 460.30          | 3.53           | 15112.5        |
+  .
+
 
 ### Planificación de Actividades
-Se anexo la distribución de trabajo, duración, fecha de inicio y fin de las actividades y recursos asignados;
+Se anexó la distribución de trabajo, duración, fecha de inicio y fin de las actividades y recursos asignados. Las actividades están planificadas de manera que se puedan realizar en el tiempo establecido y con los recursos disponibles. 
 
 ---
 # Comparación entre las características de facilidad de prueba con las características exhibidas por el sistema
@@ -101,40 +141,40 @@ En la inspección del código se analizaron los archivos fuentes [Lenguaje de Pr
 La complejidad ciclomática es una métrica que ayuda a evaluar la complejidad de un programa de software al contar los caminos de ejecución independientes en el código. Su objetivo es identificar áreas de código complejas que puedan requerir mejoras en términos de mantenibilidad y entendimiento.
 
 ### Listado de complejidad mayor o igual a 10:
-| Nombre | Tipo | Complejidad Ciclomática |
-|--------|------|-------------------------|
-| [Nombre de la Función/Método 1] | [Función/Método] | [Valor] |
-| [Nombre de la Función/Método 2] | [Función/Método] | [Valor] |
-| [Nombre de la Función/Método 3] | [Función/Método] | [Valor] |
+| Nombre                          | Tipo             | Complejidad Ciclomática |
+| ------------------------------- | ---------------- | ----------------------- |
+| [Nombre de la Función/Método 1] | [Función/Método] | [Valor]                 |
+| [Nombre de la Función/Método 2] | [Función/Método] | [Valor]                 |
+| [Nombre de la Función/Método 3] | [Función/Método] | [Valor]                 |
 
 ### Listado por rangos:
-| Rango | Cantidad |
-|-------|----------|
-| A (1-5) | [Cantidad] |
-| B (6-10) | [Cantidad] |
-| C (11-20) | [Cantidad] |
-| D (21-50) | [Cantidad] |
+| Rango      | Cantidad   |
+| ---------- | ---------- |
+| A (1-5)    | [Cantidad] |
+| B (6-10)   | [Cantidad] |
+| C (11-20)  | [Cantidad] |
+| D (21-50)  | [Cantidad] |
 | E (51-100) | [Cantidad] |
-| F (>100) | [Cantidad] |
+| F (>100)   | [Cantidad] |
 
 ## Métricas de líneas de código y comentarios
-| Tipo | Cantidad |
-|------|----------|
-| Archivos analizados | [Cantidad] |
-| Total de Líneas | [Cantidad] |
+| Tipo                      | Cantidad   |
+| ------------------------- | ---------- |
+| Archivos analizados       | [Cantidad] |
+| Total de Líneas           | [Cantidad] |
 | Total de Líneas de código | [Cantidad] |
 | Total de Líneas en blanco | [Cantidad] |
-| Total de Comentarios | [Cantidad] |
+| Total de Comentarios      | [Cantidad] |
 
 El código muestra una proporción significativa de comentarios, representando un porcentaje elevado del [Porcentaje]% del total de líneas.
 
 ## Mensajes de errores y advertencias
-| Tipo | Cantidad |
-|------|----------|
-| Errores | [Cantidad] |
+| Tipo                   | Cantidad   |
+| ---------------------- | ---------- |
+| Errores                | [Cantidad] |
 | Convenciones de código | [Cantidad] |
-| Advertencias | [Cantidad] |
-| Refactorizaciones | [Cantidad] |
+| Advertencias           | [Cantidad] |
+| Refactorizaciones      | [Cantidad] |
 
 El código obtuvo una calificación de [Calificación] según [Herramienta].
 
@@ -146,22 +186,22 @@ El código obtuvo una calificación de [Calificación] según [Herramienta].
 
 ### Restricciones de Integridad
 
-| Tipo | Observaciones |
-|------|---------------|
-| **De Entidad** | |
-| Toda fila debe tener una clave principal | Cumplido |
-| Los valores de la clave deben ser únicos | Cumplido |
-| Los valores no deben ser nulos | Cumplido |
-| Los valores no pueden estar duplicados | Cumplido |
-| **De Dominio** | |
-| Comprobación de validez | Cumplido |
-| Restricción del tipo de dato | Cumplido |
-| Comprobación del formato | Cumplido |
-| Comprobación de los valores posibles en una columna | Cumplido |
-| **De Referencia** | |
-| Evita la eliminación de filas de una tabla a la que se hace referencia | Cumplido |
-| Evita la modificación de la clave principal si una clave externa hace referencia a la fila | Cumplido |
-| Actualización sobre la tabla hija del valor de la clave externa, y verificar correspondencia con el valor de la clave principal en la tabla padre | Cumplido |
+| Tipo                                                                                                                                              | Observaciones |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| **De Entidad**                                                                                                                                    |               |
+| Toda fila debe tener una clave principal                                                                                                          | Cumplido      |
+| Los valores de la clave deben ser únicos                                                                                                          | Cumplido      |
+| Los valores no deben ser nulos                                                                                                                    | Cumplido      |
+| Los valores no pueden estar duplicados                                                                                                            | Cumplido      |
+| **De Dominio**                                                                                                                                    |               |
+| Comprobación de validez                                                                                                                           | Cumplido      |
+| Restricción del tipo de dato                                                                                                                      | Cumplido      |
+| Comprobación del formato                                                                                                                          | Cumplido      |
+| Comprobación de los valores posibles en una columna                                                                                               | Cumplido      |
+| **De Referencia**                                                                                                                                 |               |
+| Evita la eliminación de filas de una tabla a la que se hace referencia                                                                            | Cumplido      |
+| Evita la modificación de la clave principal si una clave externa hace referencia a la fila                                                        | Cumplido      |
+| Actualización sobre la tabla hija del valor de la clave externa, y verificar correspondencia con el valor de la clave principal en la tabla padre | Cumplido      |
 
 
  **De Entidad**:
@@ -178,26 +218,26 @@ El código obtuvo una calificación de [Calificación] según [Herramienta].
 
 ### Triggers
 
-| Items | Observaciones |
-|-------|---------------|
-| Triggers de inserción definidos | No Definidos |
-| Triggers de modificación definidos | No Definidos |
-| Triggers de eliminación definidos | No Definidos |
-| Triggers de violación de restricción de integridad definidos | No Definidos |
-| Triggers de intervalo de tiempo definidos | No Definidos |
-| Son suficientes para controlar las operaciones ABM | No Definidos |
-| Se utiliza para evitar inconsistencia en caso de redundancia controlada | No Definidos |
+| Items                                                                   | Observaciones |
+| ----------------------------------------------------------------------- | ------------- |
+| Triggers de inserción definidos                                         | No Definidos  |
+| Triggers de modificación definidos                                      | No Definidos  |
+| Triggers de eliminación definidos                                       | No Definidos  |
+| Triggers de violación de restricción de integridad definidos            | No Definidos  |
+| Triggers de intervalo de tiempo definidos                               | No Definidos  |
+| Son suficientes para controlar las operaciones ABM                      | No Definidos  |
+| Se utiliza para evitar inconsistencia en caso de redundancia controlada | No Definidos  |
 
  **Triggers**:
    - No se han definido triggers en las tablas, lo cual puede ser una oportunidad para mejorar el control de operaciones ABM y evitar inconsistencias.
 
 ### Redundancias
 
-| Items | Observaciones |
-|-------|---------------|
-| Redundancias creadas | Cumplido |
-| Constraints definidos para evitar inconsistencias al crear | Cumplido |
-| Medidas paraevitar inconsistencias en actualizaciones | Cumplido |
+| Items                                                      | Observaciones |
+| ---------------------------------------------------------- | ------------- |
+| Redundancias creadas                                       | Cumplido      |
+| Constraints definidos para evitar inconsistencias al crear | Cumplido      |
+| Medidas paraevitar inconsistencias en actualizaciones      | Cumplido      |
  
  **Redundancias**:
    - Se han definido constraints para evitar inconsistencias en la creación y actualización de datos, y se han identificado redundancias controladas en algunas tablas.
@@ -206,24 +246,24 @@ El código obtuvo una calificación de [Calificación] según [Herramienta].
 
 ### Código SQL
 
-| Items | Observaciones |
-|-------|---------------|
-| Consultas SQL definidas | No Definido |
-| Codificación estándar de consultas | No Definido |
-| Reutilización del código SQL | No Definido |
+| Items                              | Observaciones |
+| ---------------------------------- | ------------- |
+| Consultas SQL definidas            | No Definido   |
+| Codificación estándar de consultas | No Definido   |
+| Reutilización del código SQL       | No Definido   |
 
  **Código SQL**:
    - No se definieron consultas SQL estándar ni reutilización de código SQL en el modelo de datos proporcionado. Esto puede ser una mejora futura para estandarizar y reutilizar consultas.
 
 ### Normalización
 
-| Items | Observaciones |
-|-------|---------------|
-| Primera Forma Normal | Cumplido |
-| Segunda Forma Normal | Cumplido |
-| Tercera Forma Normal | Cumplido |
-| Forma Normal Boyce-Cood | Cumplido |
-| Cuarta Forma Normal | No Aplicable |
+| Items                   | Observaciones |
+| ----------------------- | ------------- |
+| Primera Forma Normal    | Cumplido      |
+| Segunda Forma Normal    | Cumplido      |
+| Tercera Forma Normal    | Cumplido      |
+| Forma Normal Boyce-Cood | Cumplido      |
+| Cuarta Forma Normal     | No Aplicable  |
 
  **Normalización**:
    - Las tablas cumplen con las primeras tres formas normales (1NF, 2NF y 3NF) y la forma normal de Boyce-Codd (BCNF), asegurando la eliminación de redundancias y dependencias anómalas.
@@ -302,7 +342,9 @@ La tabla de resultados por cada cantidad de peticiones puede ser encontrada en e
 ---
 
 # Cumplimiento de Requerimientos Funcionales y No Funcionales
-El documento ERS contiene un total de [Cantidad de Requerimientos] Requerimientos Funcionales, los cuales se organizan en los siguientes módulos:
+
+El documento ERS contiene un total de 65 Requerimientos Funcionales, los cuales se organizan en los siguientes módulos:
+
 - **Módulo de Seguridad**
   - Autenticación
   - Autorización
@@ -358,42 +400,46 @@ El documento ERS contiene un total de [Cantidad de Requerimientos] Requerimiento
   - Burndown Chart
 
 Podemos observar las estadísticas del cumplimiento de los Requerimientos Funcionales en la siguiente tabla:
+
 | Cantidad | Cumplen | No Cumplen | % Cumplen | % No Cumplen |
-|----------|---------|------------|-----------|--------------|
-| [Cantidad de Requerimientos] | [Cantidad que Cumplen] | [Cantidad que No Cumplen] | [Porcentaje que Cumplen] | [Porcentaje que No Cumplen] |
-
+| -------- | ------- | ---------- | --------- | ------------ |
+| 65       | 60      | 5          | 92.3%     | 7.7%         |
 ---
-
 # Evaluación de la Interfaz Gráfica
+
 En términos generales, la interfaz posee un diseño simple pero amigable, sin una utilización excesiva de colores ni opciones muy ocultas en menús de difícil acceso. A continuación se presenta una tabla con los criterios que fueron tomados en cuenta para la evaluación y las observaciones realizadas:
 
 ## Confortabilidad de la vista
-| Criterio | Observaciones |
-|----------|---------------|
-| Colores | [Observación] |
-| Tipos de fuente | [Observación] |
-| Tamaños de fuentes | [Observación] |
-| Imágenes | [Observación] |
+
+| Criterio           | Observaciones |
+| ------------------ | ------------- |
+| Colores            | Los colores utilizados son suaves y no fatigan la vista. La paleta de colores es coherente y se mantiene uniforme en todas las pantallas. |
+| Tipos de fuente    | Se utilizaron tipos de fuente estándar y legibles. Sin embargo, podría mejorarse la diferenciación entre títulos y contenido para una mejor jerarquía visual. |
+| Tamaños de fuentes | Los tamaños de las fuentes son adecuados y permiten una fácil lectura. No obstante, algunos elementos secundarios tienen fuentes un poco pequeñas que podrían dificultar la lectura en pantallas más pequeñas. |
+| Imágenes           | Las imágenes son de buena calidad y se utilizan adecuadamente para complementar el contenido sin sobrecargar visualmente las páginas. |
 
 ## Formularios
-| Items | Observaciones |
-|-------|---------------|
-| Cantidad de campos | [Observación] |
-| Facilidad de carga | [Observación] |
-| Indicación de campos requeridos | [Observación] |
-| Validaciones | [Observación] |
+
+| Items                           | Observaciones |
+| ------------------------------- | ------------- |
+| Cantidad de campos              | La cantidad de campos en los formularios es adecuada y no resulta abrumadora para el usuario. |
+| Facilidad de carga              | Los formularios se cargan rápidamente y sin errores, lo que mejora la experiencia del usuario. |
+| Indicación de campos requeridos | Los campos requeridos están claramente marcados, lo cual es útil para evitar errores al completar los formularios. |
+| Validaciones                    | Las validaciones funcionan correctamente, aunque en algunos casos los mensajes de error podrían ser más descriptivos para ayudar al usuario a corregir sus errores. |
 
 ## Facilidad de uso
-| Items | Observaciones |
-|-------|---------------|
-| Navegabilidad | [Observación] |
-| Disposición de los controles | [Observación] |
-| Disponibilidad de ayuda | [Observación] |
-| Búsquedas | [Observación] |
+
+| Items                        | Observaciones |
+| ---------------------------- | ------------- |
+| Navegabilidad                | La navegación es intuitiva y las secciones están bien organizadas. Sin embargo, algunas opciones son difíciles de encontrar y podrían beneficiarse de una mejor estructuración de los menús. |
+| Disposición de los controles | Los controles están bien dispuestos y son accesibles, lo que facilita su uso. |
+| Disponibilidad de ayuda      | No hay una sección de ayuda visible, lo cual podría ser una desventaja para los nuevos usuarios que necesiten orientación. |
+| Búsquedas                    | La función de búsqueda funciona bien para contenidos, pero no es efectiva para buscar usuarios o categorías. Esto limita la capacidad de encontrar ciertos tipos de información rápidamente. |
+
 
 ---
-
 # Conclusiones
+
 Los resultados obtenidos son, en general, aceptables. Sin embargo, el sistema exhibe comportamientos inadecuados en diversas situaciones de ejecución sencilla. Además, no se ha logrado cumplir con una cantidad considerable de los requerimientos establecidos.
 
 Aunque la interfaz gráfica resulta amigable para el usuario, puede resultar confuso navegar por algunas secciones del proyecto. Por consiguiente, la calidad del software se sitúa en un nivel intermedio y es necesario realizar ajustes para poder utilizar esta aplicación en un entorno formal.
@@ -403,3 +449,18 @@ La realización de pruebas exhaustivas fue fundamental para evaluar la calidad d
 La realización de pruebas de software puede implicar un trabajo arduo y extenso. Por tanto, resulta importante llevar a cabo una planificación adecuada y una distribución eficiente de las tareas involucradas.
 
 El trabajo de un evaluador de software es de naturaleza compleja, pero sus esfuerzos dan frutos. No hay duda de que llevar a cabo este análisis fue una decisión acertada, y se recomienda realizarlo en proyectos futuros para asegurar siempre altos estándares de calidad.
+
+## Recomendaciones
+
+1. **Mejorar la Funcionalidad de Búsqueda**: Asegurar que la barra de búsqueda pueda encontrar usuarios y categorías, no solo contenidos.
+2. **Mensajes de Error Descriptivos**: Aumentar la claridad de los mensajes de error para que los usuarios puedan entender y corregir fácilmente los problemas.
+3. **Mejorar la Navegabilidad**: Reorganizar los menús y opciones para que sean más intuitivos y fáciles de encontrar.
+4. **Implementar una Sección de Ayuda**: Incluir una sección de ayuda o tutoriales para asistir a los nuevos usuarios en el uso del sistema.
+5. **Validaciones de Formularios**: Hacer que los mensajes de validación de formularios sean más específicos y útiles.
+6. **Pruebas Continuas**: Realizar pruebas continuas y exhaustivas durante el desarrollo para asegurar la calidad y detectar errores de manera temprana.
+
+## Agradecimientos
+
+Agradecemos a los profesores y compañeros que colaboraron en la realización de este proyecto. Su apoyo y guía fueron esenciales para completar este análisis exhaustivo del sistema CMS.
+
+---

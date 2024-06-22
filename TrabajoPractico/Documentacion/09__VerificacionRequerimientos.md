@@ -24,7 +24,6 @@ Este documento tiene como objetivo verificar el cumplimiento de los requerimient
 
 En general, el sistema cumple con la mayoría de los requerimientos, pero se recomienda implementar las acciones correctivas y considerar las mejoras propuestas para asegurar un funcionamiento óptimo.
 
-
 ## 2. Introducción
 
 ### 2.1 Propósito
@@ -33,9 +32,9 @@ Describir el objetivo del documento y la importancia de verificar el cumplimient
 
 ### 2.2 Definiciones, Acrónimos y Abreviaturas
 
--**RF-#**: Requerimiento Funcional. 
--**RNF-#**: Requerimiento No Funcional. 
--**Scrum**: Marco de gestión de proyectos ágil. 
+-**RF-#**: Requerimiento Funcional.
+-**RNF-#**: Requerimiento No Funcional.
+-**Scrum**: Marco de gestión de proyectos ágil.
 -**Kanban**: Herramienta de gestión visual de proyectos.
 -**SSO**: Single Sign-On, procedimiento de autenticación único.
 
@@ -43,10 +42,10 @@ Describir el objetivo del documento y la importancia de verificar el cumplimient
 
 Este documento presenta una descripción del propósito de un Sistema de Administración de Contenido Web y detalla tanto los requerimientos funcionales como no funcionales necesarios para su creación.
 
-
 ## 3. Detalles de la Evaluación
 
 ### Requerimientos Funcionales
+
 | Código                    | Descripción                                                                                                                                                                                                    | Cumplimiento               | Detalles de Prueba                                                                                                                                                                                                                                                |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Inicio de sesión          |                                                                                                                                                                                                                |                            |                                                                                                                                                                                                                                                                   |
@@ -126,16 +125,16 @@ Este documento presenta una descripción del propósito de un Sistema de Adminis
 | RF-78                     | El sistema contará con roles predefinidos cada uno con permisos correspondientes a las funciones que deben cumplir en el sistema.                                                                              | Implementado               | Confirmado por la existencia de roles predefinidos con permisos correspondientes a sus funciones.                                                                                                                                                                 |
 | RF-79                     | El sistema deberá permitir listar permisos.                                                                                                                                                                    | Implementado               | Confirmado por la funcionalidad que permite listar permisos.                                                                                                                                                                                                      |
 | Categoría                 |                                                                                                                                                                                                                |                            |                                                                                                                                                                                                                                                                   |
-| RF-83                     | El sistema contará con un formulario único para la creación de contenido en cualquier categoría.                                                                                                               | Implementado               | Confirmado por la existencia de un formulario único para la creación de contenido en cualquier categoría.                                                                                                                                                         |                                                                                                             | Implementado               | Confirmado por la existencia de un formulario único para la creación de contenido en cualquier categoría.                                                                                                                                                           |
+| RF-83                     | El sistema contará con un formulario único para la creación de contenido en cualquier categoría.                                                                                                               | Implementado               | Confirmado por la existencia de un formulario único para la creación de contenido en cualquier categoría.                                                                                                                                                         |  | Implementado | Confirmado por la existencia de un formulario único para la creación de contenido en cualquier categoría. |
 
 ### Requerimientos Funcionales
 
-| Código | Descripción                                                                 | Cumplimiento    | Detalles de Prueba                                                                      |
-| ------ | --------------------------------------------------------------------------- | --------------- | ------------------------------------------------------------------------------------    |
-| RNF-1  | Se deberá contar con acceso a internet para poder utilizar el sistema.      | Implementado    | - Sin internet es imposible acceder a la página.                                        |
-| RNF-2  | El sistema deberá ser operado desde una computadora.                        | Implementado    | - La página es visible desde la computadora.                                            |
-| RNF-3  | El sistema no permitirá crear permisos.                                     | Implementado    | - no se permiten crear nuevos roles solo agregar los roles pre definidos.               |
-| RNF-4  | El sistema no permitirá eliminar permisos.                                  | Implementado    | - no se permite elimimar permisos solo remover el acceso de los permisos de los usuarios|
-| RNF-5  | El sistema no mostrará las publicaciones cuyos estados están en “Inactivo”. | Implementado    | - Las publicaciones en estado "Inactivo" no son visibles en la interfaz del usuario.    |
-| RNF-6  | El sistema no permitirá crear plantillas.                                   | Implementado    | - No se ha detectado que se pueden crear plantillas.                                    |
-| RNF-8  | El sistema no permitirá crear roles.                                        | Implementado    | - No se ha detectado que los roles se pueden crear.                                     |
+| Código | Descripción                                                                 | Cumplimiento | Detalles de Prueba                                                                       |
+| ------ | --------------------------------------------------------------------------- | ------------ | ---------------------------------------------------------------------------------------- |
+| RNF-1  | Se deberá contar con acceso a internet para poder utilizar el sistema.      | Implementado | - Sin internet es imposible acceder a la página.                                         |
+| RNF-2  | El sistema deberá ser operado desde una computadora.                        | Implementado | - La página es visible desde la computadora.                                             |
+| RNF-3  | El sistema no permitirá crear permisos.                                     | Implementado | - no se permiten crear nuevos roles solo agregar los roles pre definidos.                |
+| RNF-4  | El sistema no permitirá eliminar permisos.                                  | Implementado | - no se permite elimimar permisos solo remover el acceso de los permisos de los usuarios |
+| RNF-5  | El sistema no mostrará las publicaciones cuyos estados están en “Inactivo”. | Implementado | - Las publicaciones en estado "Inactivo" no son visibles en la interfaz del usuario.     |
+| RNF-6  | El sistema no permitirá crear plantillas.                                   | Implementado | - No se ha detectado que se pueden crear plantillas.                                     |
+| RNF-8  | El sistema no permitirá crear roles.                                        | Implementado | - No se ha detectado que los roles se pueden crear.                                      |
