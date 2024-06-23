@@ -7,8 +7,8 @@
 **INTEGRANTES**:  
 - Ivan Weiss Van Der Pol
 - Camila Maidana  
-- jovana alvarez  
-- Fran sanabria   
+- Jovana Alvarez  
+- Fran Sanabria   
 
 **TRABAJO PRÁCTICO**  
 SAN LORENZO, 2024  
