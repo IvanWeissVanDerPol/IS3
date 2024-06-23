@@ -24,7 +24,7 @@ La planificación adecuada de las actividades es esencial para el éxito de cual
 ## Diagrama de Gantt
 A continuación se presenta el diagrama de Gantt que visualiza la planificación de las actividades:
 
-![Diagrama de Gantt](ruta_del_archivo_diagrama_gantt.png)
+![Diagrama de Gantt](TrabajoPractico/Documentacion/Online Gantt 20240623.png)
 
 ## Detalles de las Actividades
 ### 1. Reunión inicial con los desarrolladores del sistema
