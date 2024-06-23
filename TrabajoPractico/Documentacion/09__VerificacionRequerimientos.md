@@ -127,7 +127,7 @@ Este documento presenta una descripción del propósito de un Sistema de Adminis
 | Categoría                 |                                                                                                                                                                                                                |                            |                                                                                                                                                                                                                                                                   |
 | RF-83                     | El sistema contará con un formulario único para la creación de contenido en cualquier categoría.                                                                                                               | Implementado               | Confirmado por la existencia de un formulario único para la creación de contenido en cualquier categoría.                                                                                                                                                         |  | Implementado | Confirmado por la existencia de un formulario único para la creación de contenido en cualquier categoría. |
 
-### Requerimientos Funcionales
+### Requerimientos No Funcionales
 
 | Código | Descripción                                                                 | Cumplimiento | Detalles de Prueba                                                                       |
 | ------ | --------------------------------------------------------------------------- | ------------ | ---------------------------------------------------------------------------------------- |
